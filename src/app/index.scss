@@ -1,0 +1,9 @@
+html {
+  font-size: 10px;
+  background-color: #EEE;
+}
+
+@import './common.scss';
+@import './app.component.scss';
+@import './question-form/question-form.component.scss';
+@import './questions-list/questions-list.component.scss';

@@ -1,0 +1,44 @@
+app-question-form {
+  .app-question-form__wrapper {
+    width: 90%;
+    margin: 0 auto;
+
+    @media (min-width: $tablet-min) {
+      width: 70%;
+    }
+  }
+
+  .app-question-form__header {
+    background-color: $main-color;
+  }
+
+  .app-question-form__heading-text {
+    color: white;
+    padding: 24px 0;
+    font-size: 2.4rem;
+    text-align: center;
+
+    @media (min-width: $tablet-min) {
+      text-align: left;
+    }
+  }
+
+  .app-question-form__title-text {
+    color: $main-color;
+    font-size: 1.6rem;
+    font-weight: 500;
+    padding-top: 16px;
+  }
+
+  .app-question-form__category-question-container {
+    display: flex;
+    flex-direction: column;
+    padding-top: 24px;
+    gap: 24px;
+    justify-content: center;
+
+    @media (min-width: $tablet-min) {
+      flex-direction: row;
+    }
+  }
+}
