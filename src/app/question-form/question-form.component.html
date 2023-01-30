@@ -6,7 +6,8 @@
 <div class="app-question-form__wrapper">
   <div class="app-question-form__category-question-container">
     <p class="app-question-form__title-text">Wybierz kategorie pytania:</p>
-    <mat-form-field appearance="fill">
+    <mat-form-field class="app-question-form__control-wrapper"
+                    appearance="fill">
       <mat-label>Kategoria</mat-label>
       <mat-select>
         <mat-option *ngFor="let category of categories"
@@ -16,5 +17,16 @@
       </mat-select>
     </mat-form-field>
   </div>
+
+  <div class="app-question-form__category-question-container">
+    <p class="app-question-form__title-text">Wpisz pytanie:</p>
+    <mat-form-field class="app-question-form__control-wrapper">
+      <mat-label>Pytanie</mat-label>
+      <input matInput
+             placeholder="Co to jest dyrektywa?">
+    </mat-form-field>
+  </div>
+
+  <app-question-form-answers-controls></app-question-form-answers-controls>
 
 </div>

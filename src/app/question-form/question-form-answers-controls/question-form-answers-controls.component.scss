@@ -1,0 +1,20 @@
+app-question-form-answers-controls {
+  .app-question-form-answers-controls__container {
+    margin-top: 48px;
+  }
+
+  .app-question-form-answers-controls__controls-container {
+    margin-top: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .app-question-form-answers-controls__title-text {
+    color: $main-color;
+    font-size: 1.6rem;
+    font-weight: 500;
+    padding-top: 16px;
+    text-align: center;
+  }
+}

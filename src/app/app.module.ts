@@ -12,6 +12,9 @@ import {
   QuestionFormEditComponent,
 } from './question-form/question-form-actions.component';
 import { MatSelectModule } from '@angular/material/select';
+import { MatInputModule } from '@angular/material/input';
+import { QuestionFormAnswersControlsComponent } from './question-form/question-form-answers-controls/question-form-answers-controls.component';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -20,6 +23,7 @@ import { MatSelectModule } from '@angular/material/select';
     QuestionsListComponent,
     QuestionFormAddComponent,
     QuestionFormEditComponent,
+    QuestionFormAnswersControlsComponent,
   ],
   imports: [
     BrowserModule,
@@ -27,6 +31,8 @@ import { MatSelectModule } from '@angular/material/select';
     BrowserAnimationsModule,
     MatButtonModule,
     MatSelectModule,
+    MatInputModule,
+    MatIconModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
