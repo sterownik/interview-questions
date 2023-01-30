@@ -28,6 +28,13 @@ app-question-form {
     font-size: 1.6rem;
     font-weight: 500;
     padding-top: 16px;
+    width: 100%;
+    text-align: center;
+
+    @media (min-width: $tablet-min) {
+      text-align: right;
+      width: 200px;
+    }
   }
 
   .app-question-form__category-question-container {
@@ -39,6 +46,14 @@ app-question-form {
 
     @media (min-width: $tablet-min) {
       flex-direction: row;
+    }
+  }
+
+  .app-question-form__control-wrapper {
+    width: 100%;
+
+    @media (min-width: $tablet-min) {
+      width: 240px;
     }
   }
 }
