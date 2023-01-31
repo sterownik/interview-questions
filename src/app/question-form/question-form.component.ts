@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { QuestionFormBaseService } from './question-form-services/question-form-base.service';
 import categories from '../common/categories.json';
+import { QuestionFormService } from './question-form.service';
 
 @Component({
   selector: 'app-question-form',
@@ -9,7 +10,12 @@ import categories from '../common/categories.json';
 export class QuestionFormComponent implements OnInit {
   categories = categories;
 
-  constructor(public questionFormBaseService: QuestionFormBaseService) {
+  formGroup = this.questionFormService.makeForm();
+
+  constructor(
+    public questionFormBaseService: QuestionFormBaseService,
+    private questionFormService: QuestionFormService
+  ) {
     console.log(categories);
   }
 

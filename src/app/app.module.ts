@@ -15,6 +15,8 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
 import { QuestionFormAnswersControlsComponent } from './question-form/question-form-answers-controls/question-form-answers-controls.component';
 import { MatIconModule } from '@angular/material/icon';
+import { ReactiveFormsModule } from '@angular/forms';
+import { TextFieldModule } from '@angular/cdk/text-field';
 
 @NgModule({
   declarations: [
@@ -33,6 +35,8 @@ import { MatIconModule } from '@angular/material/icon';
     MatSelectModule,
     MatInputModule,
     MatIconModule,
+    ReactiveFormsModule,
+    TextFieldModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
