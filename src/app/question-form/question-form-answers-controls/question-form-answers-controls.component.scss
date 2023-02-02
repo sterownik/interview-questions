@@ -17,4 +17,35 @@ app-question-form-answers-controls {
     padding-top: 16px;
     text-align: center;
   }
+
+  .app-question-form-answers-controls__controls-array {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+    margin: 0 auto;
+
+    @media (min-width: $tablet-min) {
+      width: 464px;
+    }
+  }
+
+  .app-question-form-answers-controls__single-control-wrapper {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+  }
+
+  .app-question-form-answers-controls__single-control {
+    flex: 1;
+  }
+
+  .app-question-form-answers-controls__delete-button {
+    padding-bottom: 20px;
+  }
+
+  .app-question-form-answers-controls__answer-counter {
+    padding-bottom: 20px;
+    color: $main-color;
+  }
 }

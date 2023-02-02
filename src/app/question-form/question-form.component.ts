@@ -9,15 +9,14 @@ import { QuestionFormService } from './question-form.service';
 })
 export class QuestionFormComponent implements OnInit {
   categories = categories;
+  answers = ['bo tak', 'bo tak 2', 'bo tak 3'];
 
   formGroup = this.questionFormService.makeForm();
 
   constructor(
     public questionFormBaseService: QuestionFormBaseService,
     private questionFormService: QuestionFormService
-  ) {
-    console.log(categories);
-  }
+  ) {}
 
   ngOnInit(): void {}
 }
