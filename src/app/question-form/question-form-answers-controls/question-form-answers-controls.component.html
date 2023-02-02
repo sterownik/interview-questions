@@ -1,7 +1,40 @@
 <div class="app-question-form-answers-controls__container">
-  <p class="app-question-form-answers-controls__title-text">Dodaj odpowiedź</p>
+
+  <p class="app-question-form-answers-controls__title-text">Dodaj odpowiedzi</p>
+  <div class="app-question-form-answers-controls__controls-array">
+    <div *ngFor="let control of formArray.controls; let i = index"
+         class="app-question-form-answers-controls__single-control-wrapper">
+
+      <span class="app-question-form-answers-controls__answer-counter">{{ i+1 }}.</span>
+      <mat-form-field class="app-question-form-answers-controls__single-control">
+        <mat-label>Odpowiedź</mat-label>
+
+        <textarea [formControl]="control"
+                  matInput
+                  cdkTextareaAutosize
+                  #autosize="cdkTextareaAutosize"
+                  cdkAutosizeMinRows="1"
+                  cdkAutosizeMaxRows="10"
+                  placeholder="Przykładowa odpowiedz"> </textarea>
+
+
+      </mat-form-field>
+      <button mat-mini-fab
+              class="app-question-form-answers-controls__delete-button"
+              type="button"
+              (click)="deleteControl(i)"
+              color="warn"
+              aria-label="Example icon button with a filter list icon">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </div>
+  </div>
+
   <div class="app-question-form-answers-controls__controls-container">
     <button mat-fab
+            [disabled]="formArray.invalid && formArray.controls.length !== 0"
+            type="button"
+            (click)="addControl()"
             color="primary"
             aria-label="Example icon button with a heart icon">
       <mat-icon>add</mat-icon>

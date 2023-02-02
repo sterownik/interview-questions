@@ -33,7 +33,8 @@
       </mat-form-field>
     </div>
 
-    <app-question-form-answers-controls></app-question-form-answers-controls>
+    <app-question-form-answers-controls [answers]="answers"
+                                        [formArray]="formGroup.controls.answers"></app-question-form-answers-controls>
 
   </div>
 
