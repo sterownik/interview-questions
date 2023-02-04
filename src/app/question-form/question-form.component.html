@@ -5,37 +5,60 @@
 </div>
 <form [formGroup]="formGroup">
   <div class="app-question-form__wrapper">
-    <div class="app-question-form__category-question-container">
-      <p class="app-question-form__title-text">Wybierz kategorie pytania:</p>
-      <mat-form-field class="app-question-form__control-wrapper"
-                      appearance="fill">
-        <mat-label>Kategoria</mat-label>
-        <mat-select [formControl]="formGroup.controls.category">
-          <mat-option *ngFor="let category of categories"
-                      [value]="category.name">
-            {{category.label}}
-          </mat-option>
-        </mat-select>
-      </mat-form-field>
+    <div class="app-question-form__shadow-wrapper">
+      <div class="app-question-form__category-question-container">
+        <p class="app-question-form__title-text">Wybierz kategorie pytania:</p>
+        <mat-form-field class="app-question-form__control-wrapper"
+                        appearance="fill">
+          <mat-label>Kategoria</mat-label>
+          <mat-select [formControl]="formGroup.controls.category">
+            <mat-option *ngFor="let category of categories"
+                        [value]="category.name">
+              {{category.label}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+      <div class="app-question-form__category-question-container">
+        <p class="app-question-form__title-text">Wpisz pytanie:</p>
+        <mat-form-field class="app-question-form__control-wrapper">
+          <mat-label>Pytanie</mat-label>
+          <textarea [formControl]="formGroup.controls.question"
+                    matInput
+                    cdkTextareaAutosize
+                    #autosize="cdkTextareaAutosize"
+                    cdkAutosizeMinRows="1"
+                    cdkAutosizeMaxRows="10"
+                    placeholder="Co to jest dyrektywa?"> </textarea>
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="app-question-form__shadow-wrapper">
+
+      <app-question-form-controls [isLinksMode]="false"
+                                  [contents]="answers"
+                                  [formArray]="formGroup.controls.answers"></app-question-form-controls>
+    </div>
+    <div class="app-question-form__shadow-wrapper app-question-form__shadow-wrapper--bottom-spacing">
+      <app-question-form-controls [isLinksMode]="true"
+                                  [contents]="links"
+                                  [formArray]="formGroup.controls.links"></app-question-form-controls>
     </div>
 
-    <div class="app-question-form__category-question-container">
-      <p class="app-question-form__title-text">Wpisz pytanie:</p>
-      <mat-form-field class="app-question-form__control-wrapper">
-        <mat-label>Pytanie</mat-label>
-        <textarea [formControl]="formGroup.controls.question"
-                  matInput
-                  cdkTextareaAutosize
-                  #autosize="cdkTextareaAutosize"
-                  cdkAutosizeMinRows="1"
-                  cdkAutosizeMaxRows="10"
-                  placeholder="Co to jest dyrektywa?"> </textarea>
-      </mat-form-field>
+  </div>
+
+  <div class="app-question-form__footer">
+    <div class="app-question-form__wrapper app-question-form__footer-btns-wrapper">
+      <button class="app-question-form__footer-btn"
+              routerLink="/"
+              mat-raised-button
+              color="warn">Anuluj</button>
+      <button class="app-question-form__footer-btn"
+              color="accent"
+              (click)="submit()"
+              mat-raised-button>Zapisz</button>
     </div>
-
-    <app-question-form-answers-controls [answers]="answers"
-                                        [formArray]="formGroup.controls.answers"></app-question-form-answers-controls>
-
   </div>
 
 </form>

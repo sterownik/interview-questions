@@ -10,6 +10,10 @@ import { QuestionFormService } from './question-form.service';
 export class QuestionFormComponent implements OnInit {
   categories = categories;
   answers = ['bo tak', 'bo tak 2', 'bo tak 3'];
+  links = [
+    'https://www.youtube.com/watch?v=p2pkQnl0PuQ&list=RDp2pkQnl0PuQ&start_radio=1&ab_channel=BrodkaVEVO',
+    'https://www.youtube.com/watch?v=YitTgxstjOY&list=RDp2pkQnl0PuQ&index=7&ab_channel=TEDEWIZJA',
+  ];
 
   formGroup = this.questionFormService.makeForm();
 
@@ -19,4 +23,8 @@ export class QuestionFormComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {}
+
+  submit() {
+    console.log(this.formGroup.value);
+  }
 }

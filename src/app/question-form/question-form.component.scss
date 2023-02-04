@@ -8,8 +8,15 @@ app-question-form {
     }
   }
 
+  .app-question-form__footer,
   .app-question-form__header {
     background-color: $main-color;
+  }
+
+  .app-question-form__footer {
+    position: sticky;
+    bottom: 0;
+    width: 100%;
   }
 
   .app-question-form__heading-text {
@@ -55,5 +62,38 @@ app-question-form {
     @media (min-width: $tablet-min) {
       width: 240px;
     }
+  }
+
+  .app-question-form__shadow-wrapper {
+    background-color: white;
+    border-radius: 8px;
+    max-width: 540px;
+    padding: 8px 16px 24px;
+    margin: 32px auto;
+
+    @media (min-width: $tablet-min) {
+      padding: 8px 0 24px;
+    }
+  }
+
+  .app-question-form__shadow-wrapper--bottom-spacing {
+    margin-bottom: 64px;
+  }
+
+  .app-question-form__footer-btns-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+
+    @media (min-width: $tablet-min) {
+      justify-content: flex-end;
+    }
+  }
+
+  .app-question-form__footer-btn {
+    margin: 16px 0;
+    padding: 0 24px;
+    color: #ffffff;
+    font-size: 1.8rem;
   }
 }
