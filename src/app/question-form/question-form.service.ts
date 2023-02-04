@@ -14,6 +14,7 @@ export class QuestionFormService {
       category: this.fb.control('', [required]),
       question: this.fb.control('', [required, minLength(6), maxLength(300)]),
       answers: this.fb.array([], [required]),
+      links: this.fb.array([]),
     });
   }
 }

@@ -13,10 +13,10 @@ import {
 } from './question-form/question-form-actions.component';
 import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
-import { QuestionFormAnswersControlsComponent } from './question-form/question-form-answers-controls/question-form-answers-controls.component';
 import { MatIconModule } from '@angular/material/icon';
 import { ReactiveFormsModule } from '@angular/forms';
 import { TextFieldModule } from '@angular/cdk/text-field';
+import { QuestionFormControlsComponent } from './question-form/question-form-controls/question-form-controls.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +25,7 @@ import { TextFieldModule } from '@angular/cdk/text-field';
     QuestionsListComponent,
     QuestionFormAddComponent,
     QuestionFormEditComponent,
-    QuestionFormAnswersControlsComponent,
+    QuestionFormControlsComponent,
   ],
   imports: [
     BrowserModule,
