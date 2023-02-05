@@ -1,0 +1,28 @@
+[
+  {
+    "id": "test1",
+    "category": "angular",
+    "question": "Czym jest dyrektywa?",
+    "answers": [
+      "To specjalny rodzaj komponentu",
+      "nie posiada templatki"
+    ],
+    "links": [
+      "https://angular.io/guide/attribute-directives",
+      "https://angular.io/guide/built-in-directives"
+    ]
+  },
+  {
+    "id": "test2",
+    "category": "html",
+    "question": "Co to jest semantyczny HTML?",
+    "answers": [
+      "Znaczniki HTML i ich atrybuty są tak zaprojektowane, aby niosły za sobą znaczenie semantyczne.",
+      "Dla przekładu: element <ol> otwiera uporządkowaną listę, a element <lang> oznacza język używany na stronie."
+    ],
+    "links": [
+      "https://devolajf.pl/html-css/jak-uzywac-html-semantycznie/",
+      "https://www.vd.pl/semantyka-html/"
+    ]
+  }
+]

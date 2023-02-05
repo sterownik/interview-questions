@@ -1,7 +1,16 @@
-<button routerLink="/add-question"
+<button routerLink="/add"
         mat-raised-button
         color="primary">Dodaj</button>
 <p>questions-list works!</p>
 <button routerLink="/edit-question"
         mat-raised-button
         color="primary">edytuj</button>
+
+<div *ngFor="let question of questions">
+  {{ question.question }}
+  <br>
+
+  <button [routerLink]="['edit', question.id]"
+          mat-raised-button
+          color="primary">edytuj</button>
+</div>

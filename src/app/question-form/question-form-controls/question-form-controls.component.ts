@@ -50,6 +50,10 @@ export class QuestionFormControlsComponent implements OnInit, OnChanges {
   }
 
   addControls(contents: string[]): void {
+    if (!contents) {
+      this.addControl();
+      return;
+    }
     contents.forEach((content) => this.addControl(content));
   }
 

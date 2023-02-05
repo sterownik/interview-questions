@@ -11,6 +11,7 @@ export class QuestionFormService {
     const { required, minLength, maxLength } = Validators;
 
     return this.fb.group({
+      id: this.fb.control('', [required]),
       category: this.fb.control('', [required]),
       question: this.fb.control('', [required, minLength(6), maxLength(300)]),
       answers: this.fb.array([], [required]),
