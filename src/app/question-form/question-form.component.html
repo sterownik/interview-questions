@@ -37,12 +37,12 @@
     <div class="app-question-form__shadow-wrapper">
 
       <app-question-form-controls [isLinksMode]="false"
-                                  [contents]="answers"
+                                  [contents]="formData?.answers"
                                   [formArray]="formGroup.controls.answers"></app-question-form-controls>
     </div>
     <div class="app-question-form__shadow-wrapper app-question-form__shadow-wrapper--bottom-spacing">
       <app-question-form-controls [isLinksMode]="true"
-                                  [contents]="links"
+                                  [contents]="formData?.links"
                                   [formArray]="formGroup.controls.links"></app-question-form-controls>
     </div>
 
@@ -56,6 +56,7 @@
               color="warn">Anuluj</button>
       <button class="app-question-form__footer-btn"
               color="accent"
+              [disabled]="formGroup.invalid"
               (click)="submit()"
               mat-raised-button>Zapisz</button>
     </div>

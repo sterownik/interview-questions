@@ -8,8 +8,8 @@ import { QuestionsListComponent } from './questions-list/questions-list.componen
 
 const routes: Routes = [
   { path: '', component: QuestionsListComponent, pathMatch: 'full' },
-  { path: 'add-question', component: QuestionFormAddComponent },
-  { path: 'edit-question', component: QuestionFormEditComponent },
+  { path: 'add', component: QuestionFormAddComponent },
+  { path: 'edit/:id', component: QuestionFormEditComponent },
 ];
 
 @NgModule({

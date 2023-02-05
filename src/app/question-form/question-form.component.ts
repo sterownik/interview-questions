@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { QuestionFormBaseService } from './question-form-services/question-form-base.service';
 import categories from '../common/categories.json';
 import { QuestionFormService } from './question-form.service';
+import { QuestionFormValue } from './question-form-value.interface';
 
 @Component({
   selector: 'app-question-form',
@@ -9,11 +10,7 @@ import { QuestionFormService } from './question-form.service';
 })
 export class QuestionFormComponent implements OnInit {
   categories = categories;
-  answers = ['bo tak', 'bo tak 2', 'bo tak 3'];
-  links = [
-    'https://www.youtube.com/watch?v=p2pkQnl0PuQ&list=RDp2pkQnl0PuQ&start_radio=1&ab_channel=BrodkaVEVO',
-    'https://www.youtube.com/watch?v=YitTgxstjOY&list=RDp2pkQnl0PuQ&index=7&ab_channel=TEDEWIZJA',
-  ];
+  formData!: Partial<QuestionFormValue>;
 
   formGroup = this.questionFormService.makeForm();
 
@@ -22,9 +19,19 @@ export class QuestionFormComponent implements OnInit {
     private questionFormService: QuestionFormService
   ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.questionFormBaseService.formValue.subscribe((data) => {
+      this.formData = data;
+
+      this.formGroup.patchValue({
+        id: this.formData.id,
+        category: this.formData.category,
+        question: this.formData.question,
+      });
+    });
+  }
 
   submit() {
-    console.log(this.formGroup.value);
+    console.log(this.formGroup);
   }
 }
