@@ -32,6 +32,8 @@ export class QuestionFormComponent implements OnInit {
   }
 
   submit() {
-    console.log(this.formGroup);
+    if (this.formGroup.invalid) return;
+
+    this.questionFormBaseService.submitAction(this.formGroup.value);
   }
 }

@@ -1,16 +1,39 @@
-<button routerLink="/add"
-        mat-raised-button
-        color="primary">Dodaj</button>
-<p>questions-list works!</p>
-<button routerLink="/edit-question"
-        mat-raised-button
-        color="primary">edytuj</button>
+<div class="app-header">
+  <div class="app-wrapper app-questions-list__header">
+    <span class="app-header-text">Pytania rekrutacyjne</span>
 
-<div *ngFor="let question of questions">
-  {{ question.question }}
-  <br>
 
-  <button [routerLink]="['edit', question.id]"
-          mat-raised-button
-          color="primary">edytuj</button>
+  </div>
+</div>
+<div class="app-wrapper app-questions-list__list-container">
+  <div class="app-questions-list__top-elements">
+    <button class="app-questions-list__adding-btn"
+            color="primary"
+            routerLink="/add"
+            mat-raised-button><span class="app-questions-list__adding-btn-icon">+</span> Dodaj Pytanie</button>
+  </div>
+
+  <div class="app-questions-list__list-elements">
+    <div class="app-questions-list__list-element"
+         *ngFor="let question of questions; index as i;">
+      <span class="app-questions-list__question-text">{{i + 1}}. {{ question.question }}</span>
+
+      <div class="app-questions-list__action-buttons"><button mat-mini-fab
+                color="warn"
+                (click)="openDeleteDialog(question.id)"
+                aria-label="Example icon button with a home icon">
+          <mat-icon>delete</mat-icon>
+        </button>
+
+        <button mat-mini-fab
+                class="app-questions-list__edit-question"
+                [routerLink]="['edit', question.id]"
+                aria-label="Example icon button with a home icon">
+          <mat-icon>edit</mat-icon>
+        </button></div>
+
+    </div>
+  </div>
+
+
 </div>

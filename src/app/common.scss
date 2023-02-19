@@ -1,3 +1,23 @@
 $main-color: #673AB7;
 $tablet-min: 768px;
 $desktop-min: 1280px;
+
+.app-footer,
+.app-header {
+  background-color: $main-color;
+}
+
+.app-wrapper {
+  width: 90%;
+  margin: 0 auto;
+
+  @media (min-width: $tablet-min) {
+    width: 70%;
+  }
+}
+
+.app-header-text {
+  color: white;
+  padding: 24px 0;
+  font-size: 2rem;
+}

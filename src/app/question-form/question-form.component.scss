@@ -8,11 +8,6 @@ app-question-form {
     }
   }
 
-  .app-question-form__footer,
-  .app-question-form__header {
-    background-color: $main-color;
-  }
-
   .app-question-form__footer {
     position: sticky;
     bottom: 0;
@@ -20,9 +15,6 @@ app-question-form {
   }
 
   .app-question-form__heading-text {
-    color: white;
-    padding: 24px 0;
-    font-size: 2.4rem;
     text-align: center;
 
     @media (min-width: $tablet-min) {
