@@ -9,5 +9,7 @@ export abstract class QuestionFormBaseService {
   abstract formTitle: string;
   abstract formValue: Observable<Partial<QuestionFormValue>>;
 
+  abstract submitAction(questionFormValue: QuestionFormValue): void;
+
   constructor() {}
 }

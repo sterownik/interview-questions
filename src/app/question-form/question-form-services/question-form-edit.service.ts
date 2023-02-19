@@ -9,6 +9,9 @@ import { QuestionFormBaseService } from './question-form-base.service';
   providedIn: 'root',
 })
 export class QuestionFormEditService extends QuestionFormBaseService {
+  submitAction(questionFormValue: QuestionFormValue): void {
+    this.questionAppLocalStorageManaging.editQuestion(questionFormValue);
+  }
   formValue = this.getQuestionToForm();
   formTitle = 'Edytuj pytanie';
 

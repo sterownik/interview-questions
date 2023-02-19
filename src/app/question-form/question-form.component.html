@@ -1,10 +1,10 @@
-<div class="app-question-form__header">
-  <div class="app-question-form__wrapper">
-    <p class="app-question-form__heading-text">{{ questionFormBaseService.formTitle }}</p>
+<div class="app-question-form__header app-header">
+  <div class="app-wrapper">
+    <p class="app-question-form__heading-text app-header-text">{{ questionFormBaseService.formTitle }}</p>
   </div>
 </div>
 <form [formGroup]="formGroup">
-  <div class="app-question-form__wrapper">
+  <div class="app-wrapper">
     <div class="app-question-form__shadow-wrapper">
       <div class="app-question-form__category-question-container">
         <p class="app-question-form__title-text">Wybierz kategorie pytania:</p>
@@ -48,8 +48,8 @@
 
   </div>
 
-  <div class="app-question-form__footer">
-    <div class="app-question-form__wrapper app-question-form__footer-btns-wrapper">
+  <div class="app-question-form__footer app-footer">
+    <div class="app-wrapper app-question-form__footer-btns-wrapper">
       <button class="app-question-form__footer-btn"
               routerLink="/"
               mat-raised-button

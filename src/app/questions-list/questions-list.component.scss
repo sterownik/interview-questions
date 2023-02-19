@@ -1,0 +1,51 @@
+app-questions-list {
+  .app-questions-list__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .app-questions-list__list-container {
+    margin-top: 32px;
+  }
+
+  .app-questions-list__top-elements {
+    display: flex;
+    justify-content: end;
+  }
+
+  .app-questions-list__list-element {
+    display: flex;
+    justify-content: space-between;
+    background-color: $main-color;
+    border-radius: 8px;
+    margin: 16px 0;
+    padding: 16px;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .app-questions-list__edit-question {
+    &.app-questions-list__edit-question {
+      background-color: white;
+    }
+
+    &.mat-mini-fab.mat-accent {
+      color: $main-color;
+    }
+
+  }
+
+  .app-questions-list__question-text {
+    color: white;
+  }
+
+  .app-questions-list__adding-btn-icon {
+    font-size: 2rem;
+  }
+
+  .app-questions-list__action-buttons {
+    display: flex;
+    gap: 12px;
+  }
+}

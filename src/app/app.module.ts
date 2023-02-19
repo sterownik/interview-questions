@@ -17,6 +17,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { ReactiveFormsModule } from '@angular/forms';
 import { TextFieldModule } from '@angular/cdk/text-field';
 import { QuestionFormControlsComponent } from './question-form/question-form-controls/question-form-controls.component';
+import { DeleteQuestionDialogComponent } from './delete-question-dialog/delete-question-dialog.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -26,6 +28,7 @@ import { QuestionFormControlsComponent } from './question-form/question-form-con
     QuestionFormAddComponent,
     QuestionFormEditComponent,
     QuestionFormControlsComponent,
+    DeleteQuestionDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -37,6 +40,7 @@ import { QuestionFormControlsComponent } from './question-form/question-form-con
     MatIconModule,
     ReactiveFormsModule,
     TextFieldModule,
+    MatDialogModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
