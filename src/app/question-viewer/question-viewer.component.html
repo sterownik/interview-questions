@@ -25,7 +25,8 @@
         *ngFor="let answer of questionValue.answers"> {{ answer }}</ul>
   </div>
 
-  <div class="app-question-viewer__links-container">
+  <div *ngIf="questionValue?.links?.length > 0"
+       class="app-question-viewer__links-container">
 
     <p class="app-question-viewer__links-title">Przydatne strony</p>
     <ul class="app-question-viewer__link"
