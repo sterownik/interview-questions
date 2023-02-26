@@ -1,4 +1,4 @@
-export interface QuestionFormValue {
+export interface QuestionValue {
   id: string;
   category: string;
   question: string;

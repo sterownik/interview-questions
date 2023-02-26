@@ -16,7 +16,8 @@
   <div class="app-questions-list__list-elements">
     <div class="app-questions-list__list-element"
          *ngFor="let question of questions; index as i;">
-      <span class="app-questions-list__question-text">{{i + 1}}. {{ question.question }}</span>
+      <a [routerLink]="['view', question.id]"
+         class="app-questions-list__question-text">{{i + 1}}. {{ question.question }}</a>
 
       <div class="app-questions-list__action-buttons"><button mat-mini-fab
                 color="warn"

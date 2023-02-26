@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { map, Observable, of } from 'rxjs';
 import firstQuestions from '../common/first-questions.json';
-import { QuestionFormValue } from '../question-form/question-form-value.interface';
+import { QuestionValue } from '../question-form/question-value.interface';
 import { QuestionsListValuesOmit } from '../questions-list/questions-list-values.interface';
 
 @Injectable({
@@ -19,8 +19,8 @@ export abstract class QuestionAppLocalStorageManaging {
     const localData = this.actualLocalStorageData;
 
     return of(localData).pipe(
-      map((localStorage: QuestionFormValue[]) => {
-        return localStorage.map((questionFormValue: QuestionFormValue) => {
+      map((localStorage: QuestionValue[]) => {
+        return localStorage.map((questionFormValue: QuestionValue) => {
           return {
             id: questionFormValue.id,
             category: questionFormValue.category,
@@ -31,7 +31,7 @@ export abstract class QuestionAppLocalStorageManaging {
     );
   }
 
-  getSingleQuestion(id: string): Observable<QuestionFormValue> {
+  getSingleQuestion(id: string): Observable<QuestionValue> {
     if (!localStorage.getItem('appQuestions')) {
       localStorage.setItem('appQuestions', JSON.stringify(firstQuestions));
     }
@@ -39,15 +39,15 @@ export abstract class QuestionAppLocalStorageManaging {
     const localData = this.actualLocalStorageData;
 
     return of(localData).pipe(
-      map((localStorage: QuestionFormValue[]) => {
+      map((localStorage: QuestionValue[]) => {
         return localStorage.find(
           (questionFormValue) => questionFormValue.id === id
-        ) as QuestionFormValue;
+        ) as QuestionValue;
       })
     );
   }
 
-  editQuestion(questionFormValue: QuestionFormValue): void {
+  editQuestion(questionFormValue: QuestionValue): void {
     const localData = this.actualLocalStorageData;
 
     const { id } = questionFormValue;
@@ -70,7 +70,7 @@ export abstract class QuestionAppLocalStorageManaging {
     localStorage.setItem('appQuestions', JSON.stringify(updatedQuestions));
   }
 
-  addQuestion(questionFormValue: QuestionFormValue): void {
+  addQuestion(questionFormValue: QuestionValue): void {
     const localData = this.actualLocalStorageData;
     const newData = [questionFormValue, ...localData];
 
@@ -79,9 +79,9 @@ export abstract class QuestionAppLocalStorageManaging {
     this.router.navigate(['']);
   }
 
-  get actualLocalStorageData(): QuestionFormValue[] {
+  get actualLocalStorageData(): QuestionValue[] {
     return JSON.parse(
       localStorage.getItem('appQuestions') as string
-    ) as QuestionFormValue[];
+    ) as QuestionValue[];
   }
 }

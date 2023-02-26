@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { QuestionFormBaseService } from './question-form-services/question-form-base.service';
 import categories from '../common/categories.json';
 import { QuestionFormService } from './question-form.service';
-import { QuestionFormValue } from './question-form-value.interface';
+import { QuestionValue } from './question-value.interface';
 
 @Component({
   selector: 'app-question-form',
@@ -10,7 +10,7 @@ import { QuestionFormValue } from './question-form-value.interface';
 })
 export class QuestionFormComponent implements OnInit {
   categories = categories;
-  formData!: Partial<QuestionFormValue>;
+  formData!: Partial<QuestionValue>;
 
   formGroup = this.questionFormService.makeForm();
 

@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { filter, startWith, Subject, switchMap, tap } from 'rxjs';
+import { filter, startWith, Subject, switchMap, takeUntil, tap } from 'rxjs';
 import { DeleteQuestionDialogComponent } from '../delete-question-dialog/delete-question-dialog.component';
 import { QuestionAppLocalStorageManaging } from '../services/question-app-local-storage-managing.service';
 import { QuestionsListValuesOmit } from './questions-list-values.interface';
@@ -9,8 +9,10 @@ import { QuestionsListValuesOmit } from './questions-list-values.interface';
   selector: 'app-questions-list',
   templateUrl: './questions-list.component.html',
 })
-export class QuestionsListComponent implements OnInit {
+export class QuestionsListComponent implements OnInit, OnDestroy {
   questions!: QuestionsListValuesOmit;
+
+  destroy$: Subject<void> = new Subject<void>();
 
   reloadList = new Subject();
 
@@ -23,11 +25,17 @@ export class QuestionsListComponent implements OnInit {
     this.reloadList
       .pipe(
         startWith(true),
-        switchMap(() => this.questionAppLocalStorageManaging.getValuesToList())
+        switchMap(() => this.questionAppLocalStorageManaging.getValuesToList()),
+        takeUntil(this.destroy$)
       )
       .subscribe((data) => {
         this.questions = data;
       });
+  }
+
+  ngOnDestroy(): void {
+    this.destroy$.next();
+    this.destroy$.unsubscribe();
   }
 
   openDeleteDialog(id: string): void {
@@ -35,7 +43,10 @@ export class QuestionsListComponent implements OnInit {
 
     dialogRef
       .afterClosed()
-      .pipe(filter((data) => data))
+      .pipe(
+        filter((data) => data),
+        takeUntil(this.destroy$)
+      )
       .subscribe(() => {
         console.log(id);
         this.deleteQuestion(id);
