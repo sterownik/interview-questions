@@ -2,14 +2,14 @@ import { Injectable } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Observable, switchMap } from 'rxjs';
 import { QuestionAppLocalStorageManaging } from 'src/app/services/question-app-local-storage-managing.service';
-import { QuestionFormValue } from '../question-form-value.interface';
+import { QuestionValue } from '../question-value.interface';
 import { QuestionFormBaseService } from './question-form-base.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class QuestionFormEditService extends QuestionFormBaseService {
-  submitAction(questionFormValue: QuestionFormValue): void {
+  submitAction(questionFormValue: QuestionValue): void {
     this.questionAppLocalStorageManaging.editQuestion(questionFormValue);
   }
   formValue = this.getQuestionToForm();
@@ -22,7 +22,7 @@ export class QuestionFormEditService extends QuestionFormBaseService {
     super();
   }
 
-  getQuestionToForm(): Observable<QuestionFormValue> {
+  getQuestionToForm(): Observable<QuestionValue> {
     return this.route.params.pipe(
       switchMap((params) => {
         return this.questionAppLocalStorageManaging.getSingleQuestion(

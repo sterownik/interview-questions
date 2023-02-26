@@ -1,6 +1,6 @@
-import { QuestionFormValue } from '../question-form/question-form-value.interface';
+import { QuestionValue } from '../question-form/question-value.interface';
 
 export type QuestionsListValuesOmit = Omit<
-  QuestionFormValue,
+  QuestionValue,
   'answers' | 'links'
 >[];

@@ -19,6 +19,7 @@ import { TextFieldModule } from '@angular/cdk/text-field';
 import { QuestionFormControlsComponent } from './question-form/question-form-controls/question-form-controls.component';
 import { DeleteQuestionDialogComponent } from './delete-question-dialog/delete-question-dialog.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { QuestionViewerComponent } from './question-viewer/question-viewer.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { MatDialogModule } from '@angular/material/dialog';
     QuestionFormEditComponent,
     QuestionFormControlsComponent,
     DeleteQuestionDialogComponent,
+    QuestionViewerComponent,
   ],
   imports: [
     BrowserModule,

@@ -6,5 +6,33 @@
   {
     "label": "HTML",
     "name": "html"
+  },
+  {
+    "label": "CSS/SCSS",
+    "name": "css"
+  },
+  {
+    "label": "JS",
+    "name": "js"
+  },
+  {
+    "label": "Git",
+    "name": "git"
+  },
+  {
+    "label": "Angielski",
+    "name": "eng"
+  },
+  {
+    "label": "Programowanie",
+    "name": "developing"
+  },
+  {
+    "label": "Rest Api",
+    "name": "api"
+  },
+  {
+    "label": "inne",
+    "name": "other"
   }
 ]
